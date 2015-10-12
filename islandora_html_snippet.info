@@ -1,0 +1,5 @@
+name = Islandora HTML Snippet
+description = Create Islandora objects for HTML snippets.
+dependencies[] = islandora
+package = Islandora Solution Packs
+core = 7.x

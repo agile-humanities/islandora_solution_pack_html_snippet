@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * islandora_html_snippet.install
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * @see islandora_html_snippet_islandora_required_objects()
+ */
+function islandora_html_snippet_install() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_html_snippet');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function islandora_html_snippet_uninstall() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_html_snippet', 'uninstall');
+// Delete variables if we make any.
+}
