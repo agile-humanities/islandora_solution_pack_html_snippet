@@ -82,6 +82,6 @@ function islandora_html_snippet_html_edit_form_submit(array $form, array &$form_
       $ds->mimetype = 'text/html';
     }
   }
-  $form_state['redirect'] = "islandora/object/{$object->id}/manage/datastreams";
+  $form_state['redirect'] = "islandora/object/{$object->id}";
 
 }
