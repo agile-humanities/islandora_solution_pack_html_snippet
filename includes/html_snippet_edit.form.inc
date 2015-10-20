@@ -38,7 +38,7 @@ function islandora_html_snippet_html_edit_form(array $form, array &$form_state, 
   $form =  array(
     'content' => array(
       '#title' => t('Content'),
-      '#type' => 'textarea',
+      '#type' => 'text_format',
       '#description' => t('Enter your content.'),
       '#default_value' => isset($form_state['values']['content']) ? $form_state['values']['content'] : NULL,
     ),
@@ -73,10 +73,14 @@ function islandora_html_snippet_html_edit_form_submit(array $form, array &$form_
     else {
       $ds = $object['OBJ'];
     }
-    $content = $form_state['values']['content'];
-    $ds->setContentFromString($content, FALSE);
-    $ds->label = 'HTML Content';
-    $ds->mimetype = 'text/html';
+    $content = $form_state['values']['content']['value'];
+    $ds->content = $content;
+    if ($ds->label != 'HTML Content') {
+      $ds->label = 'HTML Content';
+    }
+    if ($ds->mimetype != 'text/html') {
+      $ds->mimetype = 'text/html';
+    }
   }
   $form_state['redirect'] = "islandora/object/{$object->id}/manage/datastreams";
 
