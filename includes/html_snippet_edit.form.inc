@@ -39,6 +39,7 @@ function islandora_html_snippet_html_edit_form(array $form, array &$form_state, 
     'content' => array(
       '#title' => t('Content'),
       '#type' => 'text_format',
+      '#format' => 'full_html',
       '#description' => t('Enter your content.'),
       '#default_value' => isset($form_state['values']['content']) ? $form_state['values']['content'] : NULL,
     ),
